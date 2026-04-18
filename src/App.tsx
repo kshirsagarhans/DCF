@@ -13,10 +13,14 @@ const queryClient = new QueryClient({
   },
 });
 
+import { ToastProvider } from './shared/components/Toast';
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
+      <ToastProvider>
+        <RouterProvider router={router} />
+      </ToastProvider>
     </QueryClientProvider>
   );
 }

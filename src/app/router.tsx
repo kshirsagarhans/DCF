@@ -26,17 +26,15 @@ const AppShell = () => {
   }, [theme]);
 
   return (
-    <ToastProvider>
-      <div className="flex h-screen bg-[var(--bg-base)] text-[var(--text-primary)] overflow-hidden">
-        <Sidebar />
-        <div className="flex flex-col flex-1 overflow-hidden">
-          <TopBar />
-          <main className="flex-1 overflow-y-auto custom-scrollbar p-6 bg-[var(--bg-base)]">
-            <Outlet />
-          </main>
-        </div>
+    <div className="flex h-screen bg-[var(--bg-base)] text-[var(--text-primary)] overflow-hidden">
+      <Sidebar />
+      <div className="flex flex-col flex-1 overflow-hidden">
+        <TopBar />
+        <main className="flex-1 overflow-y-auto custom-scrollbar p-6 bg-[var(--bg-base)]">
+          <Outlet />
+        </main>
       </div>
-    </ToastProvider>
+    </div>
   );
 };
 
