@@ -36,7 +36,7 @@ export const Sidebar: React.FC = () => {
         {!sidebarCollapsed && (
           <div className="flex items-center gap-2 font-display text-card-title tracking-tight text-[var(--accent-primary)]">
             <Activity size={24} />
-            <span>Antigravity<span className="text-[var(--text-primary)]">AVS</span></span>
+            <span>Artha<span className="text-[var(--text-primary)]">Graph</span></span>
           </div>
         )}
         {sidebarCollapsed && (

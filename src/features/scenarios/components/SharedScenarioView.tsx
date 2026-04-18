@@ -82,12 +82,12 @@ export const SharedScenarioView: React.FC = () => {
       <div className="bg-[var(--bg-surface)] border-b border-[var(--border-subtle)] px-8 py-4 flex justify-between items-center sticky top-0 z-50">
         <div className="flex items-center gap-2 font-display text-card-title tracking-tight text-[var(--accent-primary)]">
           <Activity size={24} />
-          <span>Antigravity<span className="text-[var(--text-primary)]">AVS</span></span>
+          <span>Artha<span className="text-[var(--text-primary)]">Graph</span></span>
           <span className="ml-4 px-2 py-0.5 bg-[var(--bg-surface-2)] text-label text-[var(--text-tertiary)] rounded border border-[var(--border-subtle)]">Read Only</span>
         </div>
         <div className="flex gap-4 items-center">
-          <Link to="/login" className="text-label text-[var(--accent-primary)] hover:underline font-medium">Log In to AVS</Link>
-          <a href="https://antigravity.google.com" className="bg-[var(--accent-primary)] text-[var(--bg-base)] px-4 py-1.5 rounded text-label font-medium hover:bg-opacity-90">Request Access</a>
+          <Link to="/login" className="text-label text-[var(--accent-primary)] hover:underline font-medium">Log In to ArthaGraph</Link>
+          <a href="https://github.com/kshirsagarhans/DCF" className="bg-[var(--accent-primary)] text-[var(--bg-base)] px-4 py-1.5 rounded text-label font-medium hover:bg-opacity-90">Get Access</a>
         </div>
       </div>
 

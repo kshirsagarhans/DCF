@@ -16,7 +16,7 @@ export const exportToPDF = async (scenario: DCFScenario, elementId: string = 'ro
   const pdfWidth = pdf.internal.pageSize.getWidth();
   const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
 
-  pdf.text(`Antigravity AVS - Valuation Report: ${scenario.companyName}`, 10, 10);
+  pdf.text(`ArthaGraph - Valuation Report: ${scenario.companyName}`, 10, 10);
   pdf.addImage(imgData, 'PNG', 0, 20, pdfWidth, pdfHeight);
   
   pdf.save(`${scenario.ticker || 'Valuation'}_Report.pdf`);

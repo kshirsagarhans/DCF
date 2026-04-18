@@ -128,7 +128,7 @@ export const LoginForm: React.FC = () => {
           <div className="text-[var(--accent-primary)] mb-4 p-3 bg-[var(--accent-primary)] bg-opacity-10 rounded-xl">
             <Activity size={36} />
           </div>
-          <h1 className="font-display text-2xl tracking-tight">Antigravity AVS</h1>
+          <h1 className="font-display text-2xl tracking-tight">ArthaGraph</h1>
           <p className="text-[var(--text-secondary)] mt-1 text-sm text-center">
             {mode === 'signin' && 'Sign in to your account'}
             {mode === 'signup' && 'Create a new account'}
