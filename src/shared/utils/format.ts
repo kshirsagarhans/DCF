@@ -24,7 +24,6 @@ export function formatCurrency(
 
     const symbol = getCurrencySymbol(currency);
     const sign = value < 0 ? '−' : '';
-    // Format the number part with up to 1 decimal
     const numPart = val.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 1 });
     return `${sign}${symbol}${numPart}${suffix}`;
   }
@@ -35,17 +34,26 @@ export function formatCurrency(
     locales = 'en-IN';
   }
 
-  const formatter = new Intl.NumberFormat(locales, {
-    style: 'currency',
-    currency: currency,
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  });
+  // Guard: currency must be a valid 3-letter ISO 4217 code, otherwise fallback to USD
+  const safeCurrency = currency && /^[A-Z]{3}$/.test(currency) ? currency : 'USD';
 
-  const parts = formatter.formatToParts(Math.abs(value));
-  const numString = parts.map(p => p.value).join('');
-  
-  return value < 0 ? `−${numString}` : numString;
+  try {
+    const formatter = new Intl.NumberFormat(locales, {
+      style: 'currency',
+      currency: safeCurrency,
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    });
+
+    const parts = formatter.formatToParts(Math.abs(value));
+    const numString = parts.map(p => p.value).join('');
+    return value < 0 ? `−${numString}` : numString;
+  } catch {
+    // Absolute fallback: format as plain number with symbol
+    const symbol = getCurrencySymbol(currency);
+    const numPart = Math.abs(value).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    return `${value < 0 ? '−' : ''}${symbol}${numPart}`;
+  }
 }
 
 export function formatPercentage(value: number, decimals = 1): string {
@@ -82,5 +90,5 @@ function getCurrencySymbol(currency: string): string {
     CAD: 'C$',
     SGD: 'S$'
   };
-  return map[currency] || currency;
+  return map[currency] || (currency || '$');
 }

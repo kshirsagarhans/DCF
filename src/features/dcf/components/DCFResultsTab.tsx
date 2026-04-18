@@ -34,9 +34,35 @@ export const DCFResultsTab: React.FC = () => {
   }, [dcfResults, scenario.equityBridgeInputs]);
 
   if (!dcfResults) {
+    const hasAnyData = Object.keys(scenario.ebitdaData).length > 0;
     return (
-      <div className="flex h-full w-full items-center justify-center p-8 text-[var(--accent-coral)]">
-        Error calculating DCF. Please check your inputs and parameters.
+      <div className="flex h-full -m-6 animate-fade-in">
+        <div className="flex-1 overflow-y-auto custom-scrollbar p-6 flex flex-col items-center justify-center gap-6">
+          <div className="max-w-lg text-center">
+            <div className="text-[var(--accent-primary)] mb-4 flex justify-center">
+              <Activity size={48} />
+            </div>
+            <h2 className="text-section-header font-display mb-3 text-[var(--text-primary)]">
+              {hasAnyData ? 'Invalid DCF Parameters' : 'No Financial Data Yet'}
+            </h2>
+            <p className="text-[var(--text-secondary)] mb-6">
+              {hasAnyData
+                ? 'Check that WACC > Terminal Growth Rate, and that all parameters are within valid ranges.'
+                : 'Add historical EBITDA, D&A, CapEx, and Net Working Capital data in the Financial Inputs tab to generate your DCF model.'}
+            </p>
+            <div className="flex flex-col gap-3 p-4 bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-lg text-left text-sm text-[var(--text-secondary)]">
+              <p className="font-medium text-[var(--text-primary)]">Quick checklist:</p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Go to <strong>Financial Inputs</strong> tab and enter at least 3 forecast years of EBITDA</li>
+                <li>Ensure <strong>WACC</strong> is strictly greater than the <strong>Terminal Growth Rate</strong></li>
+                <li>Set WACC between 1% and 100%, Tax Rate between 0% and 60%</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="w-[350px] shrink-0 hidden xl:block border-l border-[var(--border-subtle)] bg-[var(--bg-surface)]">
+          <AssumptionsPanel scenario={scenario} />
+        </div>
       </div>
     );
   }

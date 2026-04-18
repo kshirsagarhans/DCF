@@ -38,7 +38,11 @@ export const ScenarioList: React.FC = () => {
     const withEv = scenarios.map(s => {
       let ev = 0;
       try {
-        ev = calculateDCF(s).enterpriseValue;
+        const projected = s.forecastYears.filter(y => y > s.historicalCutoffYear);
+        // Only calculate if we have at least one year and valid params
+        if (projected.length >= 3 && s.parameters.discountRate > s.parameters.perpetuityRate) {
+          ev = calculateDCF(s).enterpriseValue;
+        }
       } catch (err) {}
       return { ...s, ev };
     });
@@ -122,9 +126,9 @@ export const ScenarioList: React.FC = () => {
 
             <div className="flex items-baseline gap-2 mb-6">
               <span className="text-section-header font-display text-[var(--text-primary)] data-number tracking-tight">
-                {formatCurrency(scenario.ev, scenario.currency, true)}
+                {scenario.ev ? formatCurrency(scenario.ev, scenario.currency, true) : <span className="text-[var(--text-tertiary)] text-body-secondary">Add data to calculate</span>}
               </span>
-              <span className="text-label text-[var(--text-tertiary)] uppercase">EV</span>
+              {scenario.ev ? <span className="text-label text-[var(--text-tertiary)] uppercase">EV</span> : null}
             </div>
 
             <div className="mt-auto flex flex-col gap-3">
