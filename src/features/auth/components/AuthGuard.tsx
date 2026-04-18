@@ -12,7 +12,7 @@ export const AuthGuard: React.FC<{ children: React.ReactNode }> = ({ children })
 
   useEffect(() => {
     // Check active sessions and sets the user
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    supabase.auth.getSession().then(({ data: { session } }: { data: { session: any } }) => {
       setSession(session);
       setUser(session?.user || null);
       setLoading(false);
@@ -22,7 +22,7 @@ export const AuthGuard: React.FC<{ children: React.ReactNode }> = ({ children })
     });
 
     // Listen for changes on auth state
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event: any, session: any) => {
       setSession(session);
       setUser(session?.user || null);
       if (!session && location.pathname !== '/login') {
