@@ -1,9 +1,9 @@
+@import './styles/tokens.css';
+@import './styles/typography.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import './styles/tokens.css';
-@import './styles/typography.css';
 
 @layer base {
   body {
