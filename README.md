@@ -1,73 +1,100 @@
-# ReturnPro DCF Calculator
+# Antigravity Valuation Suite (AVS)
 
-Enterprise-grade discounted cash flow tooling that mirrors the ReturnPro R1 design system while following academically sound valuation methodology. The calculator applies a consistent weighted average cost of capital (WACC), the Gordon Growth terminal value model, and clear breakdowns of projected cash flows.
+An enterprise-grade, professional discounted cash flow (DCF) valuation and financial modeling web application. Built for investment analysts, portfolio managers, and finance teams, AVS replaces spreadsheet-based workflows with a structured, visually powerful, and rigorous valuation platform.
 
-## Key Features
+## 🌟 Key Features
 
-- Correct DCF engine with consistent WACC discounting and Gordon Growth terminal value.
-- Interactive React dashboard with ReturnPro-styled layout, charts, and accessibility-first inputs.
-- Debounced editing of EBITDA timelines and valuation parameters for responsive recalculation.
-- Scenario comparison workspace that contrasts any two presets with B − A delta metrics, charts, and tables.
-- Data layer abstraction prepared for Supabase persistence while supporting secure local storage.
-- Comprehensive unit tests validating terminal value math, discount factor usage, and edge cases.
+The Antigravity Valuation Suite includes several dedicated financial modules, all integrated into a cohesive "Bloomberg-Terminal" style dark-mode interface:
 
-## Getting Started
+- **DCF Results Engine:** Robust present value (PV) engine utilizing weighted average cost of capital (WACC) and the Gordon Growth Model for terminal value. Features interactive Value Bridge waterfall charts and valuation composition breakdown.
+- **Financial Inputs:** Dynamic, direct-entry data grids for historical and forecasted EBITDA, D&A, CapEx, and Net Working Capital.
+- **Sensitivity Analysis:** D3-powered interactive heatmap for visualizing Enterprise Value across WACC vs. Growth Rate matrices. Includes a Recharts-based Tornado chart for parameter sensitivity.
+- **Equity Bridge:** Bridges Enterprise Value to Intrinsic Share Price. Includes inputs for Gross Debt, Cash, Preferred Equity, and Minority Interest, paired with a dynamic Margin of Safety visualizer.
+- **LBO / Returns (IRR):** Calculates Internal Rate of Return (IRR) and Multiple on Invested Capital (MOIC) based on entry equity, holding period, and exit EV/EBITDA multiples.
+- **Monte Carlo Simulation:** A stochastic simulation engine offloaded to a Web Worker. Runs 10k-50k simulated paths using normal distributions for WACC, Growth, and EBITDA margins, outputting an interactive distribution histogram and percentiles (P10, P50, P90).
+- **Comparable Analysis (Comps):** Live integration with the Financial Modeling Prep (FMP) API. Auto-fetches peer group multiples (EV/EBITDA, P/E) and plots them on a Margin vs. Multiple scatter chart to establish an implied target valuation.
+- **Data Export:** Built-in PDF report generation (`jsPDF` + `html2canvas`) and Excel workbook generation (`SheetJS`).
 
-1. Install dependencies:
-   ```
-   npm install
-   ```
-2. Launch the development server:
-   ```
-   npm run dev
-   ```
-3. Build production assets:
-   ```
-   npm run build
-   ```
+## 🛠 Tech Stack
 
-The project uses Vite with TypeScript and Tailwind CSS. Charts are rendered with Recharts, and UI icons come from lucide-react.
+- **Frontend Framework:** React 18 with Vite
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS + Custom CSS Variables (Tokens)
+- **State Management:** Zustand (global state) & React Query (server state)
+- **Data Visualization:** Recharts (Charts) & D3.js (Heatmaps)
+- **Testing:** Vitest
+- **Performance:** Web Workers (for Monte Carlo simulations)
+- **Database/Auth:** Supabase (PostgreSQL)
 
-## Testing
+## 🏗 Architecture
 
-- Run the unit test suite:
-  ```
-  npm test
-  ```
-- Coverage reports are generated automatically using the V8 provider.
+The codebase follows a **Feature-Sliced Design** architecture, organized by domain:
 
-## Project Structure
+- `/src/features`: Domain-specific logic, components, and libraries (`auth`, `dcf`, `montecarlo`, `scenarios`, `settings`, `export`).
+- `/src/shared`: Reusable UI components (`ParameterSlider`, `MetricCard`, `DataTable`), utilities, and formatters.
+- `/src/app`: Application shell, global routing (`react-router-dom`), and context providers.
+- `/src/services`: API wrappers (Financial Modeling Prep, Supabase).
+- `/src/store`: Zustand stores for scenarios, auth, and theme management.
+- `/src/styles`: CSS design tokens (`tokens.css`, `typography.css`) defining the custom design system.
 
-- `src/lib` DCF calculation logic and supporting helpers.
-- `src/components/dcf` Dashboard, inputs, tables, and visualization components.
-- `src/components/comparison` Scenario comparison selectors, metrics, visuals, and table views.
-- `src/layouts` ReturnPro-styled application shell and navigation.
-- `src/services` Data service abstractions for local storage and Supabase.
-- `src/constants` Default EBITDA timeline and valuation parameter presets.
-- `src/utils` Formatting helpers for currency and percentages.
+## 🚀 Getting Started
 
-## Financial Methodology
+### Prerequisites
+- Node.js (v18+)
+- Financial Modeling Prep (FMP) API Key
 
-- Free cash flow applies corporate tax only when EBITDA is positive.
-- All projections and the terminal value are discounted using the same WACC.
-- Terminal value uses `TV = FCF_final * (1 + g) / (r - g)` with a separate present value step.
-- Validation prevents growth rates from equaling or exceeding the discount rate.
+### 1. Installation
 
-## Scenario Comparison
+Clone the repository and install dependencies:
 
-- Access the comparison view from the sidebar to select any two scenarios.
-- Calculations are memoized and remain idle until both dropdowns have unique selections.
-- All displayed differences are calculated as Scenario B minus Scenario A; positive values indicate Scenario B outperforms A.
-- Bar and pie charts mirror the dashboard formatting, using the same currency helpers for tooltip parity.
+```bash
+git clone https://github.com/kshirsagarhans/DCF.git
+cd DCF
+npm install
+```
 
-## Supabase Integration Notes
+### 2. Environment Setup
 
-- Schema definitions for `dcf_models` and `financial_data_sources` align with ReturnPro requirements and support row level security.
-- `SupabaseDataService` implements the full `DataService` interface, enabling easy swap from local storage to cloud persistence.
-- Add your Supabase credentials and instantiate `SupabaseDataService` once authentication is ready.
+Create a `.env` file in the root directory and add your API keys:
 
-## Accessibility and UX
+```env
+VITE_FMP_API_KEY=your_fmp_api_key_here
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
 
-- Input fields include ARIA labelling and screen reader hints.
-- Keyboard navigation is supported across numeric inputs and parameter sliders.
-- Responsive layout scales from mobile devices to desktop monitors.
+*(Note: The FMP API key is required for the Comparable Analysis module to function.)*
+
+### 3. Running the App
+
+Start the Vite development server:
+
+```bash
+npm run dev
+```
+
+Navigate to `http://localhost:5173` in your browser.
+
+### 4. Building for Production
+
+Compile TypeScript and build the production bundle:
+
+```bash
+npm run build
+```
+
+## 🧪 Testing
+
+The valuation math engines (FCF projection, Equity Bridge, IRR, Terminal Value) are heavily unit-tested.
+
+Run the test suite via Vitest:
+
+```bash
+npm test
+```
+
+## 🔐 Authentication & Data
+
+- The application uses **Supabase** for user authentication and scenario persistence. 
+- A fully protected routing setup ensures models are isolated per user.
+- The platform also supports a `/share/:token` route for generating read-only public views of specific scenarios.
