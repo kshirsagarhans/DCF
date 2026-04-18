@@ -1,0 +1,52 @@
+:root {
+  /* Default to Dark Mode */
+  --bg-base: #080c10;
+  --bg-surface: #0e1520;
+  --bg-surface-2: #141e2e;
+  --bg-surface-3: #1a2540;
+
+  --accent-primary: #00c896;
+  --accent-secondary: #0080ff;
+  --accent-amber: #f5a623;
+  --accent-coral: #ff5c3a;
+  --accent-violet: #7c6ff7;
+
+  --text-primary: #e8f0fe;
+  --text-secondary: #8fa3c0;
+  --text-tertiary: #4a6080;
+  --text-inverse: #080c10;
+
+  --border-subtle: rgba(255,255,255,0.06);
+  --border-default: rgba(255,255,255,0.10);
+  --border-strong: rgba(255,255,255,0.18);
+
+  --positive: #00c896;
+  --negative: #ff5c3a;
+  --neutral: #f5a623;
+}
+
+[data-theme='light'] {
+  --bg-base: #f5f7fa;
+  --bg-surface: #ffffff;
+  --bg-surface-2: #f0f2f5;
+  --bg-surface-3: #e4e7ec;
+
+  --accent-primary: #00a07a;
+  --accent-secondary: #0066cc;
+  --accent-amber: #e08e00;
+  --accent-coral: #e64020;
+  --accent-violet: #6b5ce6;
+
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-tertiary: #9ca3af;
+  --text-inverse: #ffffff;
+
+  --border-subtle: rgba(0,0,0,0.06);
+  --border-default: rgba(0,0,0,0.10);
+  --border-strong: rgba(0,0,0,0.18);
+
+  --positive: #00a07a;
+  --negative: #e64020;
+  --neutral: #e08e00;
+}

@@ -1,0 +1,115 @@
+
+> discounted-cashflow-analysis@0.1.0 build
+> tsc && vite build
+
+src/components/comparison/ComparisonMetrics.tsx(3,15): error TS2305: Module '"@/types/dcf"' has no exported member 'DCFDataSet'.
+src/components/comparison/ComparisonTable.tsx(4,15): error TS2305: Module '"@/types/dcf"' has no exported member 'DCFDataSet'.
+src/components/comparison/ComparisonVisualization.tsx(5,15): error TS2305: Module '"@/types/dcf"' has no exported member 'DCFDataSet'.
+src/components/comparison/ScenarioComparison.tsx(7,15): error TS2305: Module '"@/types/dcf"' has no exported member 'DCFDataSet'.
+src/components/comparison/ScenarioComparisonSimple.tsx(3,15): error TS2305: Module '"@/types/dcf"' has no exported member 'DCFDataSet'.
+src/components/comparison/ScenarioSelector.tsx(1,15): error TS2305: Module '"@/types/dcf"' has no exported member 'DCFDataSet'.
+src/components/dcf/DCFCalculator.tsx(1,15): error TS2305: Module '"@/types/dcf"' has no exported member 'DCFDataSet'.
+src/components/dcf/DetailedAnalysisTable.tsx(13,65): error TS2339: Property 'presentValues' does not exist on type 'DCFResults'.
+src/components/dcf/DetailedAnalysisTable.tsx(30,22): error TS2339: Property 'presentValues' does not exist on type 'DCFResults'.
+src/components/dcf/DetailedAnalysisTable.tsx(30,41): error TS7006: Parameter 'row' implicitly has an 'any' type.
+src/components/dcf/InputPanel.tsx(7,3): error TS2305: Module '"@/types/dcf"' has no exported member 'EBITDAData'.
+src/components/dcf/InputPanel.tsx(8,3): error TS2724: '"@/types/dcf"' has no exported member named 'IncomeStatementData'. Did you mean 'IncomeStatementRow'?
+src/components/dcf/InputPanel.tsx(9,3): error TS2305: Module '"@/types/dcf"' has no exported member 'IncomeStatementAdjustments'.
+src/components/dcf/InputPanel.tsx(10,3): error TS2305: Module '"@/types/dcf"' has no exported member 'FiscalYearLabels'.
+src/components/dcf/InputPanel.tsx(159,68): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'number'.
+src/components/dcf/InputPanel.tsx(180,43): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'number'.
+src/components/dcf/ScenarioSummary.tsx(2,30): error TS2305: Module '"@/types/dcf"' has no exported member 'EBITDAData'.
+src/components/dcf/ScenarioSummary.tsx(74,39): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'number'.
+src/components/dcf/VisualizationPanel.tsx(53,11): error TS2339: Property 'presentValues' does not exist on type 'DCFResults'.
+src/components/dcf/VisualizationPanel.tsx(53,34): error TS7006: Parameter 'pv' implicitly has an 'any' type.
+src/components/dcf/VisualizationPanel.tsx(53,38): error TS7006: Parameter 'index' implicitly has an 'any' type.
+src/components/financial-data/FinancialDataTab.tsx(1,15): error TS2305: Module '"@/types/dcf"' has no exported member 'DCFDataSet'.
+src/components/financial-data/FinancialDataTab.tsx(1,42): error TS2724: '"@/types/dcf"' has no exported member named 'IncomeStatementData'. Did you mean 'IncomeStatementRow'?
+src/components/financial-data/FinancialDataTab.tsx(1,63): error TS2305: Module '"@/types/dcf"' has no exported member 'IncomeStatementAdjustments'.
+src/components/financial-data/IncomeStatementInput.tsx(4,15): error TS2724: '"@/types/dcf"' has no exported member named 'IncomeStatementData'. Did you mean 'IncomeStatementRow'?
+src/components/financial-data/IncomeStatementInput.tsx(4,36): error TS2305: Module '"@/types/dcf"' has no exported member 'IncomeStatementAdjustments'.
+src/components/financial-data/IncomeStatementInput.tsx(4,64): error TS2305: Module '"@/types/dcf"' has no exported member 'FiscalYearLabels'.
+src/components/financial-data/IncomeStatementInput.tsx(54,93): error TS2731: Implicit conversion of a 'symbol' to a 'string' will fail at runtime. Consider wrapping this expression in 'String(...)'.
+src/constants/dcf.ts(1,30): error TS2305: Module '"@/types/dcf"' has no exported member 'EBITDAData'.
+src/constants/dcf.ts(1,42): error TS2305: Module '"@/types/dcf"' has no exported member 'FiscalYearLabels'.
+src/constants/nvidiaData.ts(1,30): error TS2305: Module '"@/types/dcf"' has no exported member 'EBITDAData'.
+src/constants/nvidiaData.ts(1,42): error TS2305: Module '"@/types/dcf"' has no exported member 'FiscalYearLabels'.
+src/constants/nvidiaData.ts(1,60): error TS2305: Module '"@/types/dcf"' has no exported member 'DCFDataSet'.
+src/constants/scenarios.ts(1,15): error TS2305: Module '"@/types/dcf"' has no exported member 'DCFDataSet'.
+src/features/dcf/components/AssumptionsPanel.tsx(99,128): error TS2345: Argument of type '"netDebt"' is not assignable to parameter of type 'never'.
+src/features/dcf/components/AssumptionsPanel.tsx(100,142): error TS2345: Argument of type '"cashAndEquivalents"' is not assignable to parameter of type 'never'.
+src/features/dcf/components/AssumptionsPanel.tsx(101,142): error TS2345: Argument of type '"preferredEquity"' is not assignable to parameter of type 'never'.
+src/features/dcf/components/AssumptionsPanel.tsx(102,144): error TS2345: Argument of type '"minorityInterest"' is not assignable to parameter of type 'never'.
+src/features/dcf/components/AssumptionsPanel.tsx(105,139): error TS2345: Argument of type '"dilutedSharesOutstanding"' is not assignable to parameter of type 'never'.
+src/features/dcf/components/AssumptionsPanel.tsx(108,151): error TS2345: Argument of type '"currentMarketPrice"' is not assignable to parameter of type 'never'.
+src/features/dcf/components/CompsTab.tsx(36,27): error TS2339: Property 'ticker' does not exist on type 'CompsEntry'.
+src/features/dcf/components/CompsTab.tsx(48,9): error TS2353: Object literal may only specify known properties, and 'ticker' does not exist in type 'CompsEntry'.
+src/features/dcf/components/CompsTab.tsx(51,26): error TS2339: Property 'peRatio' does not exist on type 'MarketDataKeyMetrics'.
+src/features/dcf/components/CompsTab.tsx(52,30): error TS2339: Property 'evToSales' does not exist on type 'MarketDataKeyMetrics'.
+src/features/dcf/components/CompsTab.tsx(53,28): error TS2339: Property 'mktCap' does not exist on type 'MarketDataProfile'.
+src/features/dcf/components/CompsTab.tsx(54,32): error TS2339: Property 'revenueGrowth' does not exist on type 'MarketDataKeyMetrics'.
+src/features/dcf/components/CompsTab.tsx(55,31): error TS2339: Property 'ebitdaMargin' does not exist on type 'MarketDataKeyMetrics'.
+src/features/dcf/components/CompsTab.tsx(75,44): error TS2339: Property 'ticker' does not exist on type 'CompsEntry'.
+src/features/dcf/components/CompsTab.tsx(86,45): error TS2339: Property 'ticker' does not exist on type 'CompsEntry'.
+src/features/dcf/components/CompsTab.tsx(95,66): error TS2339: Property 'marketCap' does not exist on type 'CompsEntry'.
+src/features/dcf/components/CompsTab.tsx(95,81): error TS2339: Property 'currency' does not exist on type 'CompsEntry'.
+src/features/dcf/components/CompsTab.tsx(101,54): error TS2339: Property 'evToEbitda' does not exist on type 'CompsEntry'.
+src/features/dcf/components/CompsTab.tsx(107,54): error TS2339: Property 'peRatio' does not exist on type 'CompsEntry'.
+src/features/dcf/components/CompsTab.tsx(113,54): error TS2339: Property 'evToRevenue' does not exist on type 'CompsEntry'.
+src/features/dcf/components/CompsTab.tsx(119,68): error TS2339: Property 'ebitdaMargin' does not exist on type 'CompsEntry'.
+src/features/dcf/components/CompsTab.tsx(127,47): error TS2339: Property 'ticker' does not exist on type 'CompsEntry'.
+src/features/dcf/components/CompsTab.tsx(139,59): error TS2339: Property 'evToEbitda' does not exist on type 'CompsEntry'.
+src/features/dcf/components/CompsTab.tsx(139,74): error TS2339: Property 'evToEbitda' does not exist on type 'CompsEntry'.
+src/features/dcf/components/CompsTab.tsx(139,114): error TS2339: Property 'evToEbitda' does not exist on type 'CompsEntry'.
+src/features/dcf/components/CompsTab.tsx(140,56): error TS2339: Property 'peRatio' does not exist on type 'CompsEntry'.
+src/features/dcf/components/CompsTab.tsx(140,68): error TS2339: Property 'peRatio' does not exist on type 'CompsEntry'.
+src/features/dcf/components/CompsTab.tsx(140,105): error TS2339: Property 'peRatio' does not exist on type 'CompsEntry'.
+src/features/dcf/components/CompsTab.tsx(148,15): error TS2339: Property 'ticker' does not exist on type 'CompsEntry'.
+src/features/dcf/components/CompsTab.tsx(149,15): error TS2339: Property 'ebitdaMargin' does not exist on type 'CompsEntry'.
+src/features/dcf/components/CompsTab.tsx(150,19): error TS2339: Property 'evToEbitda' does not exist on type 'CompsEntry'.
+src/features/dcf/components/CompsTab.tsx(151,15): error TS2339: Property 'marketCap' does not exist on type 'CompsEntry'.
+src/features/dcf/components/CompsTab.tsx(152,17): error TS2339: Property 'currency' does not exist on type 'CompsEntry'.
+src/features/dcf/components/DCFResultsTab.tsx(67,5): error TS2353: Object literal may only specify known properties, and 'isTerminal' does not exist in type '{ name: string; pv: number; isProjected: boolean; }'.
+src/features/dcf/components/DistributionChart.tsx(14,29): error TS2339: Property 'values' does not exist on type 'MonteCarloResults'.
+src/features/dcf/components/DistributionChart.tsx(17,32): error TS2339: Property 'values' does not exist on type 'MonteCarloResults'.
+src/features/dcf/components/DistributionChart.tsx(80,37): error TS2339: Property 'percentiles' does not exist on type 'MonteCarloResults'.
+src/features/dcf/components/DistributionChart.tsx(81,37): error TS2339: Property 'percentiles' does not exist on type 'MonteCarloResults'.
+src/features/dcf/components/DistributionChart.tsx(82,37): error TS2339: Property 'percentiles' does not exist on type 'MonteCarloResults'.
+src/features/dcf/components/FinancialInputsTab.tsx(19,21): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type 'DCFScenario'.
+src/features/dcf/components/IRRTab.tsx(5,30): error TS2307: Cannot find module '../lib/irr' or its corresponding type declarations.
+src/features/dcf/components/MonteCarloTab.tsx(21,5): error TS2353: Object literal may only specify known properties, and 'iterations' does not exist in type 'MonteCarloConfig | (() => MonteCarloConfig)'.
+src/features/dcf/components/MonteCarloTab.tsx(97,33): error TS2339: Property 'iterations' does not exist on type 'MonteCarloConfig'.
+src/features/dcf/components/MonteCarloTab.tsx(98,57): error TS2353: Object literal may only specify known properties, and 'iterations' does not exist in type 'SetStateAction<MonteCarloConfig>'.
+src/features/dcf/components/MonteCarloTab.tsx(111,31): error TS2551: Property 'waccStdDev' does not exist on type 'MonteCarloConfig'. Did you mean 'waccStd'?
+src/features/dcf/components/MonteCarloTab.tsx(113,59): error TS2353: Object literal may only specify known properties, and 'waccStdDev' does not exist in type 'SetStateAction<MonteCarloConfig>'.
+src/features/dcf/components/MonteCarloTab.tsx(118,31): error TS2551: Property 'growthStdDev' does not exist on type 'MonteCarloConfig'. Did you mean 'growthStd'?
+src/features/dcf/components/MonteCarloTab.tsx(120,59): error TS2353: Object literal may only specify known properties, and 'growthStdDev' does not exist in type 'SetStateAction<MonteCarloConfig>'.
+src/features/dcf/components/MonteCarloTab.tsx(125,31): error TS2339: Property 'ebitdaStdDev' does not exist on type 'MonteCarloConfig'.
+src/features/dcf/components/MonteCarloTab.tsx(127,59): error TS2353: Object literal may only specify known properties, and 'ebitdaStdDev' does not exist in type 'SetStateAction<MonteCarloConfig>'.
+src/features/dcf/components/MonteCarloTab.tsx(134,95): error TS2339: Property 'iterations' does not exist on type 'MonteCarloConfig'.
+src/features/dcf/components/MonteCarloTab.tsx(159,47): error TS2339: Property 'percentiles' does not exist on type 'MonteCarloResults'.
+src/features/dcf/components/MonteCarloTab.tsx(165,47): error TS2339: Property 'percentiles' does not exist on type 'MonteCarloResults'.
+src/features/dcf/components/MonteCarloTab.tsx(171,47): error TS2339: Property 'percentiles' does not exist on type 'MonteCarloResults'.
+src/features/dcf/components/MonteCarloTab.tsx(180,112): error TS2339: Property 'iterations' does not exist on type 'MonteCarloConfig'.
+src/features/dcf/lib/sensitivity.ts(26,9): error TS2322: Type 'never[] | undefined' is not assignable to type 'number[][]'.
+  Type 'undefined' is not assignable to type 'number[][]'.
+src/features/scenarios/components/SharedScenarioView.tsx(75,5): error TS2353: Object literal may only specify known properties, and 'isTerminal' does not exist in type '{ name: string; pv: number; isProjected: boolean; }'.
+src/hooks/useDCFCalculation.ts(3,42): error TS2305: Module '"@/types/dcf"' has no exported member 'EBITDAData'.
+src/hooks/useDCFCalculationFromDataSet.ts(3,15): error TS2305: Module '"@/types/dcf"' has no exported member 'DCFDataSet'.
+src/lib/dcf.ts(1,42): error TS2305: Module '"@/types/dcf"' has no exported member 'EBITDAData'.
+src/lib/dcf.ts(1,54): error TS2305: Module '"@/types/dcf"' has no exported member 'PresentValueBreakdown'.
+src/lib/dcf.ts(1,77): error TS2305: Module '"@/types/dcf"' has no exported member 'DCFDataSet'.
+src/lib/dcf.ts(75,5): error TS2353: Object literal may only specify known properties, and 'presentValues' does not exist in type 'DCFResults'.
+src/lib/incomeStatement.ts(1,15): error TS2724: '"@/types/dcf"' has no exported member named 'IncomeStatementData'. Did you mean 'IncomeStatementRow'?
+src/lib/incomeStatement.ts(1,36): error TS2305: Module '"@/types/dcf"' has no exported member 'IncomeStatementAdjustments'.
+src/lib/incomeStatement.ts(1,64): error TS2305: Module '"@/types/dcf"' has no exported member 'EBITDAData'.
+src/services/dataService.ts(2,15): error TS2305: Module '"@/types/dcf"' has no exported member 'DCFModel'.
+src/utils/currencyConversion.ts(2,15): error TS2305: Module '"@/types/dcf"' has no exported member 'DCFDataSet'.
+src/utils/currencyConversion.ts(2,27): error TS2305: Module '"@/types/dcf"' has no exported member 'EBITDAData'.
+src/utils/currencyConversion.ts(2,39): error TS2724: '"@/types/dcf"' has no exported member named 'IncomeStatementData'. Did you mean 'IncomeStatementRow'?
+src/utils/currencyConversion.ts(14,33): error TS18046: 'value' is of type 'unknown'.
+src/utils/currencyConversion.ts(31,16): error TS18046: 'data' is of type 'unknown'.
+src/utils/currencyConversion.ts(32,13): error TS18046: 'data' is of type 'unknown'.
+src/utils/currencyConversion.ts(33,12): error TS18046: 'data' is of type 'unknown'.
+src/utils/currencyConversion.ts(34,21): error TS18046: 'data' is of type 'unknown'.
+src/utils/currencyConversion.ts(35,21): error TS18046: 'data' is of type 'unknown'.

@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6, .display-font {
+  font-family: 'Instrument Serif', serif;
+}
+
+code, .mono-font, .data-number {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Typography Utility Classes */
+.text-label {
+  font-size: 11px;
+}
+.text-body-secondary {
+  font-size: 13px;
+}
+.text-body-primary {
+  font-size: 15px;
+}
+.text-card-title {
+  font-size: 18px;
+}
+.text-section-header {
+  font-size: 24px;
+}
+.text-hero-metric {
+  font-size: 40px;
+}
